@@ -16,9 +16,15 @@ import { Login } from './login/login';
 import { Dashboard } from './dashboard/dashboard';
 import { Students } from './students/students';
 import { Payments } from './payments/payments';
-import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
+import {MatCard, MatCardContent, MatCardHeader, MatCardModule, MatCardTitle} from '@angular/material/card';
 import { LoadStudents } from './load-students/load-students';
 import { LoadPayments } from './load-payments/load-payments';
+import {MatTable, MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatFormField, MatInput} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -46,11 +52,16 @@ import { LoadPayments } from './load-payments/load-payments';
     MatDrawerContainer,
     MatNavList,
     MatListItem,
-    MatCard,
+    MatCardModule,
     MatCardHeader,
     MatCardTitle,
     MatCardContent,
-    MatDivider
+    MatDividerModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInput,
+    MatFormFieldModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
