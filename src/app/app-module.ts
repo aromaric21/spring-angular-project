@@ -25,6 +25,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatFormField, MatInput} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+import {AuthGuard} from './guards/auth-guard';
+import {AuthorizationGuard} from './guards/authorization-guard';
 
 @NgModule({
   declarations: [
@@ -61,10 +64,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatPaginatorModule,
     MatSortModule,
     MatInput,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    AuthGuard, AuthorizationGuard
   ],
   bootstrap: [App]
 })
