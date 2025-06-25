@@ -9,12 +9,29 @@ import {MatButton, MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenu, MatMenuItem, MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
 import {MatDrawerContainer, MatSidenavModule} from '@angular/material/sidenav';
-import {MatListItem, MatNavList} from '@angular/material/list';
+import {MatDivider, MatListItem, MatNavList} from '@angular/material/list';
+import { Home } from './home/home';
+import { Profile } from './profile/profile';
+import { Login } from './login/login';
+import { Dashboard } from './dashboard/dashboard';
+import { Students } from './students/students';
+import { Payments } from './payments/payments';
+import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
+import { LoadStudents } from './load-students/load-students';
+import { LoadPayments } from './load-payments/load-payments';
 
 @NgModule({
   declarations: [
     App,
-    AdminTemplate
+    AdminTemplate,
+    Home,
+    Profile,
+    Login,
+    Dashboard,
+    Students,
+    Payments,
+    LoadStudents,
+    LoadPayments
   ],
   imports: [
     BrowserModule,
@@ -28,7 +45,12 @@ import {MatListItem, MatNavList} from '@angular/material/list';
     MatMenuItem,
     MatDrawerContainer,
     MatNavList,
-    MatListItem
+    MatListItem,
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardContent,
+    MatDivider
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
