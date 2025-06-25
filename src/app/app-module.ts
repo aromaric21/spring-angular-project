@@ -7,7 +7,9 @@ import { AdminTemplate } from './admin-template/admin-template';
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 import {MatButton, MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
+import {MatMenu, MatMenuItem, MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
+import {MatDrawerContainer, MatSidenavModule} from '@angular/material/sidenav';
+import {MatListItem, MatNavList} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,13 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenu,
+    MatMenuModule,
     MatMenuTrigger,
-    MatMenuItem
+    MatSidenavModule,
+    MatMenuItem,
+    MatDrawerContainer,
+    MatNavList,
+    MatListItem
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
