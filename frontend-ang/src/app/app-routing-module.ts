@@ -10,7 +10,6 @@ import {Students} from './students/students';
 import {Payments} from './payments/payments';
 import {AdminTemplate} from './admin-template/admin-template';
 import {authGuard} from './guards/auth-guard';
-import {authorizationGuard} from './guards/authorization-guard';
 
 const routes: Routes = [
   {path: "", component: Login},
