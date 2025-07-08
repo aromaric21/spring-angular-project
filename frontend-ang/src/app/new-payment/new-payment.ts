@@ -51,7 +51,9 @@ export class NewPayment implements OnInit {
   }
 
   savePayment() {
-    let formData = new FormData();
+    let date: Date = new Date(this.paymentFormGroup.value.date);
+    //let formattedDate = date.getDate() + '/' + (date.getMonth()+ 1) + '/' + date.getFullYear();
+    let formData: FormData = new FormData();
     formData.set('date', this.paymentFormGroup.value.date);
     formData.set('amount', this.paymentFormGroup.value.amount);
     formData.set('type', this.paymentFormGroup.value.type);
