@@ -1,5 +1,6 @@
 package net.aromaric.services;
 
+import net.aromaric.dtos.NewPaymentDTO;
 import net.aromaric.entities.Payment;
 import net.aromaric.entities.Student;
 import net.aromaric.enumeration.PaymentStatus;
@@ -38,22 +39,22 @@ public class PaymentService {
     }
 
     // Save a payment service
-    public Payment savepayment( MultipartFile file, LocalDate date, double amount,
-                               PaymentType type, String studentCode) throws IOException {
-        Path folderPath = Paths.get(System.getProperty("user.home"),"train-data","payement");
+    public Payment savepayment(MultipartFile file, NewPaymentDTO newPaymentDTO) throws IOException {
+        Path folderPath = Paths.get(System.getProperty("user.home"),"train-students","payments");
         if (!Files.exists(folderPath)){
             Files.createDirectories(folderPath);
         }
         String fileName = UUID.randomUUID().toString();
-        Path filePath = Paths.get(System.getProperty("user.home"),"train-data","payement",
-                fileName+".pdf");
+        Path filePath = Paths.get(System.getProperty("user.home"),"train-students","payments", fileName+".pdf");
         Files.copy(file.getInputStream(), filePath);
-        Student student = studentRepository.findByCode(studentCode);
+        Student student = studentRepository.findByCode(newPaymentDTO.getStudentCode());
         Payment payment = Payment.builder()
-                .date(date).type(type).student(student)
-                .amount(amount)
-                .file(filePath.toUri().toString())
+                .type(newPaymentDTO.getType())
                 .status(PaymentStatus.CREATED)
+                .date(newPaymentDTO.getDate())
+                .student(student)
+                .amount(newPaymentDTO.getAmount())
+                .file(filePath.toUri().toString())
                 .build();
         return paymentRepository.save(payment);
     }

@@ -33,6 +33,9 @@ import { NewPayment } from './new-payment/new-payment';
 import {MatDatepickerInput, MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PaymentDetails } from './payment-details/payment-details';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import {MatSelectModule} from '@angular/material/select';
     Students,
     Dashboard,
     StudentDetails,
-    NewPayment
+    NewPayment,
+    PaymentDetails
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-
+    PdfViewerModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(), authGuard, authorizationGuard

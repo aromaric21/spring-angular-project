@@ -12,7 +12,7 @@ import {AdminTemplate} from './admin-template/admin-template';
 import {authGuard} from './guards/auth-guard';
 import {StudentDetails} from './student-details/student-details';
 import {NewPayment} from './new-payment/new-payment';
-import {authorizationGuard} from './guards/authorization-guard';
+import {PaymentDetails} from './payment-details/payment-details';
 
 const routes: Routes = [
   {path: "", component: Login},
@@ -27,6 +27,7 @@ const routes: Routes = [
       {path: "payments", component: Payments},
       {path: "student-details/:code", component: StudentDetails},
       {path: "new-payment/:studentCode", component: NewPayment},
+      {path: "payment-details/:id", component: PaymentDetails},
       {path: "loadStudents", component: LoadStudents},
       {path: "loadPayments", component: LoadPayments},
     ]},

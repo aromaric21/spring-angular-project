@@ -1,5 +1,6 @@
 package net.aromaric.web;
 
+import net.aromaric.dtos.NewPaymentDTO;
 import net.aromaric.entities.Payment;
 import net.aromaric.entities.Student;
 import net.aromaric.enumeration.PaymentStatus;
@@ -105,9 +106,8 @@ public class PaymentRestController {
 
     // Save a payment
     @PostMapping(path = "/payments", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public Payment savepayment(@RequestParam MultipartFile file, LocalDate date, double amount,
-                               PaymentType type, String studentCode) throws IOException {
-        return this.paymentService.savepayment(file, date, amount, type, studentCode);
+    public Payment savepayment(@RequestParam("file") MultipartFile file, NewPaymentDTO newPaymentDTO) throws IOException {
+        return this.paymentService.savepayment(file, newPaymentDTO);
     }
 
     @GetMapping(path = "/paymentFile/{paymentId}", produces = {MediaType.APPLICATION_PDF_VALUE})
