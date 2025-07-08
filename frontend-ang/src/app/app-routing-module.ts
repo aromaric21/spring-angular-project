@@ -10,6 +10,9 @@ import {Students} from './students/students';
 import {Payments} from './payments/payments';
 import {AdminTemplate} from './admin-template/admin-template';
 import {authGuard} from './guards/auth-guard';
+import {StudentDetails} from './student-details/student-details';
+import {NewPayment} from './new-payment/new-payment';
+import {authorizationGuard} from './guards/authorization-guard';
 
 const routes: Routes = [
   {path: "", component: Login},
@@ -19,11 +22,13 @@ const routes: Routes = [
     children: [
       {path: "home", component: Home},
       {path: "profile", component: Profile},
-      {path: "loadStudents", component: LoadStudents},
-      {path: "loadPayments", component: LoadPayments},
       {path: "dashboard", component: Dashboard},
       {path: "students", component: Students},
       {path: "payments", component: Payments},
+      {path: "student-details/:code", component: StudentDetails},
+      {path: "new-payment/:studentCode", component: NewPayment},
+      {path: "loadStudents", component: LoadStudents},
+      {path: "loadPayments", component: LoadPayments},
     ]},
 ];
 

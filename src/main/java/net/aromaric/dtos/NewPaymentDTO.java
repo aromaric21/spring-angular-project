@@ -7,7 +7,7 @@ import net.aromaric.enumeration.PaymentType;
 import java.time.LocalDate;
 
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString @Builder
-public class PaymentDto {
+public class NewPaymentDTO {
     private Long id;
     private LocalDate date;
     private double amount;
